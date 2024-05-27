@@ -4,7 +4,11 @@ local length = 0.5 -- animation length.
 local ease = 0.25 -- easing animation IN and OUT.
 local amount = 30 -- scroll amount.
 
-hook.Add("PreGamemodeLoaded", "Reloaded_DVScrollBar_Control", function()	
+hook.Add("PreGamemodeLoaded", "Reloaded_DVScrollBar_Control", function()
+	local convar = CreateClientConVar("classicbox_smoothscroll", "1", true, false, "")
+
+	if not convar:GetBool() then return end
+
 	local function sign( num )
 		return num > 0
 	end
