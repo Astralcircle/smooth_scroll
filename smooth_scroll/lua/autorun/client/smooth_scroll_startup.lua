@@ -1,20 +1,10 @@
-
 if SERVER then return end -- error control when this file in shared.
 
 local length = 0.5 -- animation length.
 local ease = 0.25 -- easing animation IN and OUT.
 local amount = 30 -- scroll amount.
 
-hook.Add( "PreGamemodeLoaded", "Reloaded_DVScrollBar_Control", function()
-
-	print("/////////////////////////////////")
-	print("//    Smooth Scroll StartUp    //")
-	print("/////////////////////////////////")
-	print("By Minbird")
-	print("System Version: 1.4")
-	print("System Version Date: 2021.8.1")
-	print("[Smooth Scroll] Trying to redefine controls...")
-	
+hook.Add("PreGamemodeLoaded", "Reloaded_DVScrollBar_Control", function()	
 	local function sign( num )
 		return num > 0
 	end
@@ -69,7 +59,4 @@ hook.Add( "PreGamemodeLoaded", "Reloaded_DVScrollBar_Control", function()
 	end
 
 	derma.DefineControl( "DVScrollBar", "Smooth Scrollbar", dermaCtrs, "Panel" )
-	
-	print("[Smooth Scroll] Redefine complete!")
-	
-end )
+end)
